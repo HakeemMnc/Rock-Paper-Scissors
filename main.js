@@ -37,15 +37,18 @@ function game() {
   let round;
   let count = [0, 0];
   const choices = ["rock", "paper", "scissors"];
+
   for (let i = 0; i < 3; i++) {
     computerChoice = getComputerChoice();
     playerChoice = prompt("Rock, paper or scissors ?");
     round = gameRound(playerChoice, computerChoice);
+
     if (choices.includes(playerChoice.toLowerCase())) {
       console.log(round);
     } else {
       console.log("incorrect input");
     }
+
     if (round.includes("win")) {
       count[0]++;
     } else if (round.includes("loose")) {
